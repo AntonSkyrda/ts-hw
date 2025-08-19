@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let weatherForWeek = [
     {
         monday: {
@@ -58,4 +57,3 @@ console.log(weatherForWeek[3]);
 console.log(weatherForWeek[4]);
 console.log(weatherForWeek[5]);
 console.log(weatherForWeek[6]);
-//# sourceMappingURL=main.js.map

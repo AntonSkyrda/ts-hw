@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let inputNumber = 0;
 if (inputNumber >= 0 && inputNumber <= 15) {
     console.log("First quoter");
@@ -16,4 +15,3 @@ else if (inputNumber > 45 && inputNumber <= 59) {
 else {
     console.log("Incorrect input");
 }
-//# sourceMappingURL=main.js.map

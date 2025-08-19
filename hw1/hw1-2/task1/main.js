@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let arr = [
     12, "qwer", false, 2.3, [1, 2, 4], true, 89, "asd", -99, true,
 ];
@@ -13,4 +12,3 @@ console.log(arr[6]);
 console.log(arr[7]);
 console.log(arr[8]);
 console.log(arr[9]);
-//# sourceMappingURL=main.js.map

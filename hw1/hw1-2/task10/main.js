@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let firstNumber = 2;
 let secondNumber = 2;
 if (firstNumber === secondNumber) {
@@ -14,4 +13,3 @@ else if (firstNumber < secondNumber) {
 else {
     console.log("Incorrect input");
 }
-//# sourceMappingURL=main.js.map

@@ -1,21 +1,19 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-let book1 = {
+let book12 = {
     title: "Kobzar",
     pageCount: 555,
     genre: "poetry",
 };
-let book2 = {
+let book23 = {
     title: "The Witcher",
     pageCount: 365,
     genre: "fantasy",
 };
-let book3 = {
+let book34 = {
     title: "The picture of Dorian Gray",
     pageCount: 236,
     genre: "classic literature",
 };
-console.log(book1);
-console.log(book2);
-console.log(book3);
-//# sourceMappingURL=main.js.map
+console.log(book12);
+console.log(book23);
+console.log(book34);

@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let coursesAndDurationArray = [
     { title: 'JavaScript Complex', monthDuration: 5 },
     { title: 'Java Complex', monthDuration: 6 },
@@ -26,4 +25,3 @@ if (coursesAndDurationArray[4].monthDuration > 5) {
 if (coursesAndDurationArray[5].monthDuration > 5) {
     console.log("Super");
 }
-//# sourceMappingURL=main.js.map

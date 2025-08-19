@@ -4,24 +4,24 @@ type BookType = {
     genre: string;
 }
 
-let book1: BookType = {
+let book12: BookType = {
     title: "Kobzar",
     pageCount: 555,
     genre:"poetry",
 };
 
-let book2: BookType = {
+let book23: BookType = {
     title: "The Witcher",
     pageCount: 365,
     genre:"fantasy",
 };
 
-let book3: BookType = {
+let book34: BookType = {
     title: "The picture of Dorian Gray",
     pageCount: 236,
     genre:"classic literature",
 };
 
-console.log(book1)
-console.log(book2)
-console.log(book3)
+console.log(book12)
+console.log(book23)
+console.log(book34)

@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let book1 = {
     title: "Kobzar",
     pageCount: 555,
@@ -36,4 +35,3 @@ let book3 = {
 console.log(book1);
 console.log(book2);
 console.log(book3);
-//# sourceMappingURL=main.js.map

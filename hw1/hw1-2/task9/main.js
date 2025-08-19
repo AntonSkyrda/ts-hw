@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const dayOfWeek = 2;
 switch (dayOfWeek) {
     case 1:
@@ -26,4 +25,3 @@ switch (dayOfWeek) {
     default:
         console.log("Incorrect input");
 }
-//# sourceMappingURL=main.js.map
