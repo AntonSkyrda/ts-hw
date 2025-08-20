@@ -1,3 +1,10 @@
-const numbersToString = (numbers: number[]): string[] => numbers.map(number => number.toString());
+function sortArray(array: number[], property: string): any[] | string {
+    if (property === "ascending") return array.sort((a, b) => a - b);
+    if (property === "descending") return array.sort((a, b) => b - a);
 
-console.log(numbersToString([10,8,-7,55,987,-1011,0,1050,0]));
+    return "Incorrect input";
+}
+
+console.log(sortArray([3, 11, 21], "ascending"));
+console.log(sortArray([3, 11, 21], "descending"));
+console.log(sortArray([3, 11, 21], "qwe"));

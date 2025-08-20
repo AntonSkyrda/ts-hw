@@ -1,3 +1,7 @@
-let dirtyString: string = " dirty string   "
+let str: string= "Ревуть воли як ясла повні";
+let notStr: number = 123;
 
-console.log(dirtyString.trim());
+const stringToArray = (str: string): string | string[] => str === typeof(str)  ? str.split(" ") : `"${str} is not string"`;
+
+console.log(stringToArray(str));
+console.log(notStr);

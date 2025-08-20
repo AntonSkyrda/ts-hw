@@ -1,7 +1,7 @@
-let string1: string = "hello world";
-let string2: string = "lorem ipsum";
-let string3: string = "javascript is cool";
+let string12: string = "hello world";
+let string22: string = "lorem ipsum";
+let string32: string = "javascript is cool";
 
-console.log(string1.length);
-console.log(string2.length);
-console.log(string3.length);
+console.log(string12.toUpperCase());
+console.log(string22.toUpperCase());
+console.log(string32.toUpperCase());

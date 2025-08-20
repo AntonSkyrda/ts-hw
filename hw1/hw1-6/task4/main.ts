@@ -1,7 +1,3 @@
-let string13 = "HELLO WORLD";
-let string23 = "LOREM IPSUM";
-let string33 = "JAVASCRIPT IS COOL";
+let dirtyString: string = " dirty string   "
 
-console.log(string13.toLowerCase());
-console.log(string23.toLowerCase());
-console.log(string33.toLowerCase());
+console.log(dirtyString.trim());

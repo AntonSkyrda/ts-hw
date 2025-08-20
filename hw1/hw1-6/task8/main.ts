@@ -1,10 +1,33 @@
-function sortArray(array: number[], property: string): any[] | string {
-    if (property === "ascending") return array.sort((a, b) => a - b);
-    if (property === "descending") return array.sort((a, b) => b - a);
-
-    return "Incorrect input";
+interface ICourse {
+    title: string;
+    monthDuration: number;
 }
 
-console.log(sortArray([3, 11, 21], "ascending"));
-console.log(sortArray([3, 11, 21], "descending"));
-console.log(sortArray([3, 11, 21], "qwe"));
+interface ICourseWithId {
+    id: number;
+    title: string;
+    monthDuration: number;
+}
+
+let coursesAndDurationArray1: ICourse[] = [
+    {title: "JavaScript Complex", monthDuration: 5},
+    {title: "Java Complex", monthDuration: 6},
+    {title: "Python Complex", monthDuration: 6},
+    {title: "QA Complex", monthDuration: 4},
+    {title: "FullStack", monthDuration: 7},
+    {title: "Frontend", monthDuration: 4}
+];
+
+
+const sortedCourses = coursesAndDurationArray1
+    .sort(
+        (a: ICourse, b: ICourse): number => b.monthDuration - a.monthDuration
+    )
+    .filter(
+        (value: ICourse):boolean => value.monthDuration > 5
+    )
+    .map(
+        (value: ICourse, index: number):ICourseWithId => ({...value, id: index + 1})
+    );
+
+console.log(sortedCourses);

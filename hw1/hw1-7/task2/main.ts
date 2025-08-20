@@ -1,21 +1,47 @@
-interface ICourse {
-    title: string;
-    monthDuration: number;
+interface IGadget  {
+    name: string;
+    details: {
+        price: number;
+        color: string
+    }
+    sayHello(): void;
 }
 
-interface ICourseWithId extends ICourse{
-    id: number;
+
+function makeDeepCopy(obj: any): any {
+    if (obj) {
+        let functions: any[] = []
+        const copiedObj: any = JSON.parse(JSON.stringify(obj));
+
+        for (const key in obj) {
+            if (typeof obj[key] === "function") {
+                const funcCopy = obj[key].bind({});
+                functions.push({funcCopy, key});
+            }
+        }
+        for (const func of functions) {
+            copiedObj[func.key] = func.funcCopy;
+        }
+
+        return copiedObj;
+    }
+    return "Incorrect object in"
 }
 
-let coursesAndDurationArray2: ICourse[] = [
-    {title: "JavaScript Complex", monthDuration: 5},
-    {title: "Java Complex", monthDuration: 6},
-    {title: "Python Complex", monthDuration: 6},
-    {title: "QA Complex", monthDuration: 4},
-    {title: "FullStack", monthDuration: 7},
-    {title: "Frontend", monthDuration: 4}
-];
+const gadget: IGadget = {
+    name: "Gadget",
+    details: {
+        price: 100,
+        color: "black"
+    },
+    sayHello(): void {
+        console.log(`Hello`);
+    }
+};
 
-let addId = (arr: ICourse[]): ICourseWithId[] => arr.map((item: ICourse, index: number): ICourseWithId => ({...item, id: index + 1}));
+const copy = makeDeepCopy(gadget);
 
-console.log(addId(coursesAndDurationArray2));
+console.log(copy);
+copy.sayHello();
+console.log(copy === gadget);
+console.log(copy.details === gadget.details);

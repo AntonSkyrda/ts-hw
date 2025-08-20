@@ -1,9 +1,17 @@
-interface IDeck {
+type DeckBySuiteType = {
+    spades: DeckType[];
+    diamonds: DeckType[],
+    hearts: DeckType[],
+    clubs: DeckType[],
+}
+
+type DeckType = {
     suite: string;
     value: string;
 }
 
-const cardValues: string[] = [
+
+const cardValues1: string[] = [
     "6",
     "7",
     "8",
@@ -13,17 +21,17 @@ const cardValues: string[] = [
     "queen",
     "king",
     "ace"
-]
+];
 
-const cardSuites: string[] = [
+const cardSuites1: string[] = [
     "clubs",
     "hearts",
     "spades",
     "diamonds"
-]
+];
 
-function createCardDeck(cardValues: string[], cardSuites: string[]): IDeck[] {
-    let cardDeck = [];
+function createCardDeck1(cardValues: string[], cardSuites: string[]): DeckType[] {
+    let cardDeck: DeckType[] = [];
     for (const cardSuite of cardSuites) {
         for (const cardValue of cardValues) {
             cardDeck.push(
@@ -39,9 +47,20 @@ function createCardDeck(cardValues: string[], cardSuites: string[]): IDeck[] {
 }
 
 
-let cardDeck = createCardDeck(cardValues, cardSuites)
+let cardDeck1: DeckType[] = createCardDeck1(cardValues1, cardSuites1);
 
-console.log(cardDeck.find((card: IDeck): boolean => card.value === "ace" && card.suite === "spades"));
-console.log(cardDeck.filter((card: IDeck): boolean => card.value === "6"));
-console.log(cardDeck.filter((card: IDeck): boolean => card.suite === "diamonds"));
-console.log(cardDeck.filter((card: IDeck): boolean => ["9", "10", "jack", "queen", "king", "ace"].includes(card.value) && card.suite === "diamonds"));
+let groupedDeckBySuites: DeckBySuiteType = cardDeck1.reduce((acc: any, card: DeckType):DeckBySuiteType => {
+        if (!acc[card.suite]) {
+            acc[card.suite] = [];
+        }
+        acc[card.suite].push(card);
+        return acc;
+    }, {
+        spades: [],
+        diamonds: [],
+        hearts: [],
+        clubs: [],
+    }
+);
+
+console.log(groupedDeckBySuites);

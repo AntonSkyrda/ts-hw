@@ -1,66 +1,21 @@
-type DeckBySuiteType = {
-    spades: DeckType[];
-    diamonds: DeckType[],
-    hearts: DeckType[],
-    clubs: DeckType[],
+interface ICourse {
+    title: string;
+    monthDuration: number;
 }
 
-type DeckType = {
-    suite: string;
-    value: string;
+interface ICourseWithId extends ICourse{
+    id: number;
 }
 
-
-const cardValues1: string[] = [
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "jack",
-    "queen",
-    "king",
-    "ace"
+let coursesAndDurationArray2: ICourse[] = [
+    {title: "JavaScript Complex", monthDuration: 5},
+    {title: "Java Complex", monthDuration: 6},
+    {title: "Python Complex", monthDuration: 6},
+    {title: "QA Complex", monthDuration: 4},
+    {title: "FullStack", monthDuration: 7},
+    {title: "Frontend", monthDuration: 4}
 ];
 
-const cardSuites1: string[] = [
-    "clubs",
-    "hearts",
-    "spades",
-    "diamonds"
-];
+let addId = (arr: ICourse[]): ICourseWithId[] => arr.map((item: ICourse, index: number): ICourseWithId => ({...item, id: index + 1}));
 
-function createCardDeck1(cardValues: string[], cardSuites: string[]): DeckType[] {
-    let cardDeck: DeckType[] = [];
-    for (const cardSuite of cardSuites) {
-        for (const cardValue of cardValues) {
-            cardDeck.push(
-                {
-                    suite: cardSuite,
-                    value: cardValue,
-                }
-            );
-        }
-    }
-
-    return cardDeck;
-}
-
-
-let cardDeck1: DeckType[] = createCardDeck1(cardValues1, cardSuites1);
-
-let groupedDeckBySuites: DeckBySuiteType = cardDeck1.reduce((acc: any, card: DeckType):DeckBySuiteType => {
-        if (!acc[card.suite]) {
-            acc[card.suite] = [];
-        }
-        acc[card.suite].push(card);
-        return acc;
-    }, {
-        spades: [],
-        diamonds: [],
-        hearts: [],
-        clubs: [],
-    }
-);
-
-console.log(groupedDeckBySuites);
+console.log(addId(coursesAndDurationArray2));

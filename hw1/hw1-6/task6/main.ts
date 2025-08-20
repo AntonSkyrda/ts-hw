@@ -1,7 +1,3 @@
-let str: string= "Ревуть воли як ясла повні";
-let notStr: number = 123;
+const numbersToString = (numbers: number[]): string[] => numbers.map(number => number.toString());
 
-const stringToArray = (str: string): string | string[] => str === typeof(str)  ? str.split(" ") : `"${str} is not string"`;
-
-console.log(stringToArray(str));
-console.log(notStr);
+console.log(numbersToString([10,8,-7,55,987,-1011,0,1050,0]));
